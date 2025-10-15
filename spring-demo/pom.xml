@@ -25,11 +25,11 @@
             <artifactId>spring-data-redis</artifactId>
             <version>3.5.4</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>6.2.0</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>

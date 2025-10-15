@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/data")
-public class RedisController {
+public class RedisDemoController {
 
     @Autowired
     private StringRedisTemplate redisTemplate;
