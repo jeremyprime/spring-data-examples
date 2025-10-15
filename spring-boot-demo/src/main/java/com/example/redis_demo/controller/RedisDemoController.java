@@ -1,7 +1,7 @@
 package com.example.redis_demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
+import io.valkey.springframework.data.valkey.core.StringValkeyTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RedisDemoController {
 
     @Autowired
-    private StringRedisTemplate redisTemplate;
+    private StringValkeyTemplate redisTemplate;
 
     @PostMapping("/set")
     public ResponseEntity<String> set(@RequestParam String key, @RequestParam String value) {
