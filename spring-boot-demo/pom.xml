@@ -38,18 +38,6 @@
 			<groupId>io.valkey.springframework.data</groupId>
 			<artifactId>spring-data-valkey</artifactId>
 			<version>3.5.1</version>
-			<exclusions>
-				<exclusion>
-					<groupId>io.valkey</groupId>
-					<artifactId>valkey-glide</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>io.valkey</groupId>
-			<artifactId>valkey-glide</artifactId>
-			<classifier>linux-x86_64</classifier>
-			<version>2.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -59,6 +47,16 @@
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 		</dependency> -->
+		<!-- <dependency>
+			<groupId>io.lettuce</groupId>
+			<artifactId>lettuce-core</artifactId>
+		</dependency> -->
+		<dependency>
+			<groupId>io.valkey</groupId>
+			<artifactId>valkey-glide</artifactId>
+			<classifier>${os.detected.classifier}</classifier>
+			<version>2.1.1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
