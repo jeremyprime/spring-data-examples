@@ -29,6 +29,18 @@
             <groupId>io.valkey.springframework.data</groupId>
             <artifactId>spring-data-valkey</artifactId>
             <version>3.5.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.valkey</groupId>
+                    <artifactId>valkey-glide</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.valkey</groupId>
+            <artifactId>valkey-glide</artifactId>
+            <classifier>linux-x86_64</classifier>
+            <version>2.1.1</version>
         </dependency>
         <!-- <dependency>
             <groupId>redis.clients</groupId>
@@ -56,7 +68,7 @@
     <build>
         <extensions>
             <extension>
-            <groupId>kr.motd.maven</groupId>
+                <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>
                 <version>1.7.1</version>
             </extension>
