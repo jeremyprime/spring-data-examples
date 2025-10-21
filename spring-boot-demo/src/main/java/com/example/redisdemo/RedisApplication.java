@@ -1,13 +1,13 @@
-package com.example.redis_demo;
+package com.example.redisdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RedisDemoApplication {
+public class RedisApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RedisDemoApplication.class, args);
+		SpringApplication.run(RedisApplication.class, args);
 	}
 
 }

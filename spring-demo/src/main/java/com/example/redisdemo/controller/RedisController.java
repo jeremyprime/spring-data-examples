@@ -1,4 +1,4 @@
-package com.example.redis_demo.controller;
+package com.example.redisdemo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import io.valkey.springframework.data.valkey.core.StringValkeyTemplate;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/data")
-public class RedisDemoController {
+public class RedisController {
 
     @Autowired
     private StringValkeyTemplate redisTemplate;
@@ -23,10 +23,8 @@ public class RedisDemoController {
         return ResponseEntity.ok("OK");
     }
 
-    @SuppressWarnings("null")
     @GetMapping("/get")
     public ResponseEntity<String> get(@RequestParam String key) {
-        System.out.println("Connection Factory: " + redisTemplate.getConnectionFactory().getClass().getName());
         String value = redisTemplate.opsForValue().get(key);
         return value != null ? ResponseEntity.ok(value) : ResponseEntity.notFound().build();
     }
