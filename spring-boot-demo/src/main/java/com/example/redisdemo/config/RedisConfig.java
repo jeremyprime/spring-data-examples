@@ -18,14 +18,14 @@ public class RedisConfig {
     private int port;
 
     @Bean
-    public ValkeyConnectionFactory valkeyConnectionFactory() {
+    public ValkeyConnectionFactory redisConnectionFactory() {
         ValkeyStandaloneConfiguration config = new ValkeyStandaloneConfiguration(host, port);
         return ValkeyGlideConnectionFactory.createValkeyGlideConnectionFactory(config);
     }
 
     @Bean
     public StringValkeyTemplate stringValkeyTemplate() {
-        return new StringValkeyTemplate(valkeyConnectionFactory());
+        return new StringValkeyTemplate(redisConnectionFactory());
     }
 
 }
