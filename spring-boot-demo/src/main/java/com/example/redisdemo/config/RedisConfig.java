@@ -24,7 +24,7 @@ public class RedisConfig {
     }
 
     @Bean
-    public StringValkeyTemplate stringValkeyTemplate() {
+    public StringValkeyTemplate stringRedisTemplate() {
         return new StringValkeyTemplate(redisConnectionFactory());
     }
 
