@@ -12,7 +12,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>com.example.config.RedisConfig</param-value>
+        <param-value>com.example.redisdemo.config.RedisConfig</param-value>
     </context-param>
 
     <listener>
@@ -28,7 +28,7 @@
         </init-param>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>com.example.config.WebConfig</param-value>
+            <param-value>com.example.redisdemo.config.WebConfig</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

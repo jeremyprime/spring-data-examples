@@ -5,13 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>spring-redis-demo</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>redis-demo</artifactId>
+    <version>1.0</version>
+    <name>redis-demo</name>
+    <description>Demo project for Spring Data Redis</description>
     <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
