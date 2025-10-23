@@ -17,7 +17,7 @@ public class RedisConfig {
         ValkeyStandaloneConfiguration config = new ValkeyStandaloneConfiguration("localhost", 6379);
         // return new JedisConnectionFactory(config);
         // return new LettuceConnectionFactory(config);
-        return ValkeyGlideConnectionFactory.createValkeyGlideConnectionFactory(config);
+        return new ValkeyGlideConnectionFactory(config);
     }
 
     @Bean
