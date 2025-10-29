@@ -12,7 +12,7 @@ public class CacheService {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
-    @Cacheable(value = "userCache", key = "#userId")
+    @Cacheable(value = "userCache", key = "#p0")
     public String getUserData(String userId) {
         // Simulate expensive operation
         try {
@@ -23,7 +23,7 @@ public class CacheService {
         return "User data for: " + userId;
     }
 
-    @CacheEvict(value = "userCache", key = "#userId")
+    @CacheEvict(value = "userCache", key = "#p0")
     public void evictUserCache(String userId) {
         System.out.println("Evicted cache for user: " + userId);
     }
