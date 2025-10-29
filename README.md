@@ -20,6 +20,12 @@ cd spring-boot-demo
 mvn clean spring-boot:run
 ```
 
+Complex Demo (Console App):
+```sh
+cd complex-demo
+mvn clean compile exec:java
+```
+
 ## Usage
 
 Call application endpoints:
