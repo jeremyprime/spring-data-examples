@@ -20,8 +20,15 @@ cd spring-boot-demo
 mvn clean spring-boot:run
 ```
 
+Complex Demo (Console App):
+```sh
+cd complex-demo
+mvn clean compile exec:java
+```
+
 ## Usage
 
+Call application endpoints:
 ```sh
 curl -X POST "http://localhost:8080/api/data/set?key=mykey&value=hello_redis"
 curl "http://localhost:8080/api/data/get?key=mykey"
