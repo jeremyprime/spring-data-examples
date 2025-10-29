@@ -3,16 +3,16 @@ package com.example.complexdemo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.redis.core.StringRedisTemplate;
+import io.valkey.springframework.data.valkey.core.StringValkeyTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CacheService {
 
     @Autowired
-    private StringRedisTemplate stringRedisTemplate;
+    private StringValkeyTemplate stringRedisTemplate;
 
-    @Cacheable(value = "userCache", key = "#userId")
+    @Cacheable(value = "userCache", key = "#p0")
     public String getUserData(String userId) {
         // Simulate expensive operation
         try {
@@ -23,7 +23,7 @@ public class CacheService {
         return "User data for: " + userId;
     }
 
-    @CacheEvict(value = "userCache", key = "#userId")
+    @CacheEvict(value = "userCache", key = "#p0")
     public void evictUserCache(String userId) {
         System.out.println("Evicted cache for user: " + userId);
     }

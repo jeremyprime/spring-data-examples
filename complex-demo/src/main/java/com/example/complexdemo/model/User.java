@@ -1,10 +1,10 @@
 package com.example.complexdemo.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
-import org.springframework.data.redis.core.index.Indexed;
+import io.valkey.springframework.data.valkey.core.ValkeyHash;
+import io.valkey.springframework.data.valkey.core.index.Indexed;
 
-@RedisHash("users")
+@ValkeyHash("users")
 public class User {
 
     @Id
