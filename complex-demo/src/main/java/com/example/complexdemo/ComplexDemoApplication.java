@@ -18,6 +18,7 @@ public class ComplexDemoApplication {
         testAdvancedOperations(context);
         testCacheOperations(context);
         context.close();
+        System.exit(0);
     }
 
     private static void testRepositoryOperations(AnnotationConfigApplicationContext context) {
