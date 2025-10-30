@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.google.osdetector' version '1.7.3'
+}
+
+group = 'com.example'
+version = '1.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+application {
+    mainClass = 'com.example.complexdemo.ComplexDemoApplication'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.valkey.springframework.data:spring-data-valkey:3.5.1'
+    implementation "io.valkey:valkey-glide:2.1.1:${osdetector.classifier}"
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.0'
+}

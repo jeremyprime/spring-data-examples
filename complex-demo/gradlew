@@ -1,0 +1,18 @@
+#!/bin/bash
+
+GRADLE_WRAPPER_JAR="gradle/wrapper/gradle-wrapper.jar"
+GRADLE_WRAPPER_PROPERTIES="gradle/wrapper/gradle-wrapper.properties"
+
+if [ ! -f "$GRADLE_WRAPPER_JAR" ]; then
+    echo "Downloading Gradle Wrapper..."
+    mkdir -p gradle/wrapper
+    curl -L -o "$GRADLE_WRAPPER_JAR" "https://github.com/gradle/gradle/raw/v8.5.0/gradle/wrapper/gradle-wrapper.jar"
+fi
+
+if [ -n "$JAVA_HOME" ]; then
+    JAVA_CMD="$JAVA_HOME/bin/java"
+else
+    JAVA_CMD="java"
+fi
+
+exec "$JAVA_CMD" -cp "$GRADLE_WRAPPER_JAR" org.gradle.wrapper.GradleWrapperMain "$@"

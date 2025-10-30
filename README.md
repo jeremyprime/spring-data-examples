@@ -24,6 +24,9 @@ Complex Demo (Console App):
 ```sh
 cd complex-demo
 mvn clean compile exec:java
+
+# Or with Gradle
+./gradlew run
 ```
 
 ## Usage
