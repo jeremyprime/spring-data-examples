@@ -20,7 +20,8 @@ public class RedisConfig {
     @Bean
     public ValkeyConnectionFactory redisConnectionFactory() {
         ValkeyStandaloneConfiguration config = new ValkeyStandaloneConfiguration(host, port);
-        return new ValkeyGlideConnectionFactory(config);
+        //return new ValkeyGlideConnectionFactory(config);
+        return ValkeyGlideConnectionFactory.createValkeyGlideConnectionFactory(config);
     }
 
     @Bean
