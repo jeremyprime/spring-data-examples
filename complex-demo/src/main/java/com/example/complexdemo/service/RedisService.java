@@ -2,7 +2,7 @@ package com.example.complexdemo.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.*;
+import io.valkey.springframework.data.valkey.core.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,10 +14,10 @@ import java.util.concurrent.TimeUnit;
 public class RedisService {
 
     @Autowired
-    private StringRedisTemplate stringRedisTemplate;
+    private StringValkeyTemplate stringRedisTemplate;
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private ValkeyTemplate<String, Object> redisTemplate;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -82,7 +82,7 @@ public class RedisService {
 
     // Pipeline operations
     public void pipelineOperations() {
-        redisTemplate.executePipelined((RedisCallback<Object>) connection -> {
+        redisTemplate.executePipelined((ValkeyCallback<Object>) connection -> {
             connection.set("pipe1".getBytes(), "value1".getBytes());
             connection.set("pipe2".getBytes(), "value2".getBytes());
             connection.set("pipe3".getBytes(), "value3".getBytes());
@@ -94,7 +94,7 @@ public class RedisService {
     public void transactionOperations() {
         redisTemplate.execute(new SessionCallback<Object>() {
             @Override
-            public Object execute(RedisOperations operations) {
+            public Object execute(ValkeyOperations operations) {
                 operations.multi();
                 operations.opsForValue().set("tx1", "value1");
                 operations.opsForValue().set("tx2", "value2");

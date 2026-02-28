@@ -22,20 +22,31 @@
             <artifactId>spring-webmvc</artifactId>
             <version>5.3.30</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
             <version>3.5.4</version>
+        </dependency> -->
+        <dependency>
+            <groupId>io.valkey.springframework.data</groupId>
+            <artifactId>spring-data-valkey</artifactId>
+            <version>3.5.1</version>
         </dependency>
         <!-- <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>6.2.0</version>
         </dependency> -->
-        <dependency>
+        <!-- <dependency>
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>
             <version>6.8.1.RELEASE</version>
+        </dependency> -->
+        <dependency>
+            <groupId>io.valkey</groupId>
+            <artifactId>valkey-glide</artifactId>
+            <classifier>${os.detected.classifier}</classifier>
+            <version>2.1.1</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -51,6 +62,13 @@
     </dependencies>
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.7.1</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
